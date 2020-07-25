@@ -1,1 +1,16 @@
-<p>book works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="form-group" *ngIf="book">
+            <img width="400px" *ngIf="book.imageUrl" [src]="book.imageUrl" />
+            <h2>{{ book.title }}</h2>
+            <p>{{ book.author }}</p>
+        </div>
+
+        <div class="alert alert-danger text-center form-group" role="alert" *ngIf="!book">
+            Le livre n'a pas été trouvé !
+        </div>
+        
+        <button class="btn btn-primary" routerLink="/books">
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Retour à la liste</button>
+    </div>
+</div>
